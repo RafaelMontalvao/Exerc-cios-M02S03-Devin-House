@@ -1,4 +1,4 @@
-const root = document.getElementById('root')
+let tabela= document.getElementById('root')
 
 const musicas = [
   {nome: "Listen to your heart", cantor: "Roxette"},
@@ -10,17 +10,17 @@ const musicas = [
 ]
 
 
-let playlistString = JSON.stringify(playlist);
+let playlistString = JSON.stringify(musicas);
 
-localStorage.setItem("musicas gravadas", playlistString);
+localStorage.setItem("Melhores hits", playlistString);
 
-let playlistStringRetornada = localStorage.getItem("musicas gravadas");
+let playlistStringRetornada = localStorage.getItem("Melhores hits");
 
 playlistRetornadaeConvertida = JSON.parse(playlistStringRetornada);
 
 
-for (var i of playlistRetornadaeConvertida) {
-    root.innerHTML +=
+for (let i = 0; i < playlistRetornadaeConvertida.length; i++) {
+    tabela.innerHTML +=
     `<tr>
     <td>${playlistRetornadaeConvertida[i].nome}</td>
     <td>${playlistRetornadaeConvertida[i].cantor}</td>
